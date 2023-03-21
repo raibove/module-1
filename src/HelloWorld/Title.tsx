@@ -6,10 +6,8 @@ const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
 	fontSize: 100,
-	textAlign: 'center',
-	position: 'absolute',
-	bottom: 160,
-	width: '100%',
+	textAlign:'center',
+	padding:'0 10vw'
 };
 
 const word: React.CSSProperties = {

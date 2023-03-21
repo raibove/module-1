@@ -8,7 +8,6 @@ import {
 } from 'remotion';
 import { Lottie } from "@remotion/lottie";
 import helloData from './animationData.json';
-import {Subtitle} from './HelloWorld/Subtitle';
 import {Title} from './HelloWorld/Title';
 
 export const HelloWorld: React.FC<{
@@ -35,7 +34,7 @@ export const HelloWorld: React.FC<{
 		[0, -height/3]
 	);
 
-	const logoTranslationProgress1 = spring({
+	const logoTranslationProgressAfter = spring({
 		frame: frame-60,
 		fps,
 		config: {
@@ -44,11 +43,22 @@ export const HelloWorld: React.FC<{
 	});
 
 	// Move the logo up by 150 pixels once the transition starts
-	const logoTranslation1 = interpolate(
-		logoTranslationProgress1,
+	const logoTranslationAfter = interpolate(
+		logoTranslationProgressAfter,
 		[0, 1],
 		[0, -height/4]
 	);
+
+	const introTranslation = interpolate(
+		spring({
+			frame: frame - 90, 
+			fps,
+			config: {
+				damping:200
+			}}),
+			[0,1],
+			[0, height/2.5]
+	)
 
 	// Fade out the animation at the end
 	const opacity = interpolate(
@@ -65,18 +75,16 @@ export const HelloWorld: React.FC<{
 	return (
 		<AbsoluteFill style={{backgroundColor: 'white'}}>
 			<AbsoluteFill style={{opacity}}>
-				<AbsoluteFill style={{transform:`translateY(${logoTranslation1}px)`}}>
-				<AbsoluteFill style={{transform:`translateY(${logoTranslation}px)`}}>
-				<Lottie animationData={helloData} />
-				</AbsoluteFill>
+				<AbsoluteFill style={{transform:`translateY(${logoTranslationAfter}px)`}}>
+					<AbsoluteFill style={{transform:`translateY(${logoTranslation}px)`}}>
+						<Lottie animationData={helloData} />
+					</AbsoluteFill>
 				</AbsoluteFill>
 				{/* Sequences can shift the time for its children! */}
-				<Sequence from={65}>
-					<Title titleText={titleText} titleColor={titleColor} />
-				</Sequence>
-				{/* The subtitle will only enter on the 75th frame. */}
-				<Sequence from={75}>
-					<Subtitle />
+				<Sequence from={90}>
+					<AbsoluteFill style={{transform: `translateY(${introTranslation}px)`}}>
+						<Title titleText={titleText} titleColor={titleColor} />
+					</AbsoluteFill>
 				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>
