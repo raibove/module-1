@@ -8,7 +8,7 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="RemotionVideo"
 				component={RemotionVideo}
-				durationInFrames={500}
+				durationInFrames={1500}
 				fps={30}
 				width={1920}
 				height={1080}
