@@ -10,7 +10,7 @@ import { Lottie } from "@remotion/lottie";
 import helloData from './animationData.json';
 import {Title} from './HelloWorld/Title';
 
-export const HelloWorld: React.FC<{
+export const Welcome: React.FC<{
 	titleText: string;
 	titleColor: string;
 }> = ({titleText, titleColor}) => {
