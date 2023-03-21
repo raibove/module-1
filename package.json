@@ -12,6 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@remotion/cli": "3.3.78",
+    "@remotion/google-fonts": "^3.3.78",
     "@remotion/lottie": "^3.3.78",
     "lottie-web": "^5.10.2",
     "react": "^18.0.0",

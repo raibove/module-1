@@ -1,18 +1,20 @@
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from './constants';
+import {loadFont} from '@remotion/google-fonts/Mynerve';
+
+const {fontFamily} = loadFont();
 
 const title: React.CSSProperties = {
-	fontFamily: FONT_FAMILY,
-	fontWeight: 'bold',
-	fontSize: 100,
+	fontFamily,
+	lineHeight: 1.5,
+	fontSize: '150px',
 	textAlign:'center',
 	padding:'0 10vw'
 };
 
 const word: React.CSSProperties = {
-	marginLeft: 10,
-	marginRight: 10,
+	marginLeft: 35,
+	marginRight: 35,
 	display: 'inline-block',
 };
 

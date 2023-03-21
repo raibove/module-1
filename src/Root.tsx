@@ -17,7 +17,7 @@ export const RemotionRoot: React.FC = () => {
 				height={1080}
 				defaultProps={{
 					titleText: 'Welcome to this course on Remotion',
-					titleColor: 'black',
+					titleColor: '#EA5E48'
 				}}
 			/>
 		</>
