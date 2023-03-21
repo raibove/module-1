@@ -38,6 +38,12 @@ export const RemotionVideo: React.FC = () => {
           </AbsoluteFill>
         </Sequence>
 			</Sequence>
+      <Sequence
+        from={1080}
+				durationInFrames={550}
+			>
+				<Typewriter titleText='Remotion is built using React components, which makes it easy for developers to create videos quickly and efficiently. Instead of using other video editing softwares which can be difficult to learn & use.'  titleColor='#EA5E48'/>
+			</Sequence>
     </>
   )
 }
