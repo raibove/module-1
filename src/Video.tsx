@@ -6,6 +6,7 @@ import danceData from "./leavesData.json";
 import { Fade } from './Transitions/FadeOut';
 import { SlideIn } from './Transitions/SlideIn';
 import { Heading } from './HelloWorld/Heading';
+import { MediaHeading } from './HelloWorld/MediaHeading';
 
 export const RemotionVideo: React.FC = () => {
 
@@ -126,6 +127,22 @@ export const RemotionVideo: React.FC = () => {
 					<Heading titleText='With Remotion you can easily integrate other animation libraries, and create complex animation without having to start from scratch.' textColor='#0b84f3' backgroundColor='white' fontSize='110px'/>
 				</SlideIn>
 				</Fade>
+			</Sequence>
+			<Sequence 
+				from={3500}
+				durationInFrames={150}
+			>
+				<Fade direction='out'>
+				<SlideIn>
+					<Heading titleText='How does Remotion work?' textColor='white' backgroundColor='#0b84f3' fontSize='110px'/>
+				</SlideIn>
+				</Fade>
+			</Sequence>
+			<Sequence
+				from={3650}
+				durationInFrames={300}
+				>
+					<MediaHeading />
 			</Sequence>
     </>
   )
